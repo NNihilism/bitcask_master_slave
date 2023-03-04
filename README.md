@@ -21,14 +21,14 @@
 - 缺点：
   - 从节点越多，主节点压力越大
   - 扩展难题，整体性能受限于mastet
-![星型复制](./resource/%E6%98%9F%E5%9E%8B%E5%A4%8D%E5%88%B6.png)
+![星型复制](https://github.com/NNihilism/bitcask_master_slave/blob/master/resource/%E6%98%9F%E5%9E%8B%E5%A4%8D%E5%88%B6.png)
 #### 链式复制【x】
 - 优点：
   - 解决了星型结构的扩展难题
 - 缺点：
   - 复制链越长，末端同步延迟越大
   - 某个节点异常，会影响到下游所有节点
-![星型复制](./resource/%E9%93%BE%E5%BC%8F%E5%A4%8D%E5%88%B6.png)
+![星型复制](https://github.com/NNihilism/bitcask_master_slave/blob/master/resource/%E9%93%BE%E5%BC%8F%E5%A4%8D%E5%88%B6.png)
 
 ### 通讯模型
 - 节点之间使用rpc通讯【√】
