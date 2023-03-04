@@ -1,7 +1,7 @@
 package nodeCore
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/errno"
+	"bitcask_master_slave/pkg/errno"
 	"strconv"
 )
 

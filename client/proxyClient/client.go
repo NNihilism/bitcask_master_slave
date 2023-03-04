@@ -2,10 +2,10 @@
 package cmd
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/consts"
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/errno"
-	"bitcaskDB/internal/bitcask_master_slaves/proxy/kitex_gen/prxyService/proxyservice"
-	"bitcaskDB/internal/log"
+	"bitcask_master_slave/log"
+	"bitcask_master_slave/pkg/consts"
+	"bitcask_master_slave/pkg/errno"
+	"bitcask_master_slave/proxy/kitex_gen/prxyService/proxyservice"
 	"bufio"
 	"bytes"
 	"fmt"

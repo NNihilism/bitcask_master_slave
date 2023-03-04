@@ -1,11 +1,11 @@
 package nodeCore
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/node/config"
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node"
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node/nodeservice"
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/consts"
-	"bitcaskDB/internal/log"
+	"bitcask_master_slave/log"
+	"bitcask_master_slave/node/config"
+	"bitcask_master_slave/node/kitex_gen/node"
+	"bitcask_master_slave/node/kitex_gen/node/nodeservice"
+	"bitcask_master_slave/pkg/consts"
 	"context"
 	"fmt"
 	"time"

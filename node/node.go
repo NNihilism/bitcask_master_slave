@@ -2,12 +2,13 @@
 package main
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/node/config"
-	nodeCore "bitcaskDB/internal/bitcask_master_slaves/node/node_core"
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/consts"
-	"bitcaskDB/internal/log"
-	"bitcaskDB/internal/options"
+	"bitcask_master_slave/log"
+	"bitcask_master_slave/node/config"
+	nodeCore "bitcask_master_slave/node/node_core"
+	"bitcask_master_slave/pkg/consts"
 	"strings"
+
+	"github.com/NNihilism/bitcaskdb/options"
 )
 
 func init() {

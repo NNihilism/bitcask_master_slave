@@ -1,7 +1,7 @@
 package main
 
 import (
-	prxyservice "bitcaskDB/internal/bitcask_master_slaves/proxy/kitex_gen/prxyService"
+	prxyservice "bitcask_master_slave/proxy/kitex_gen/prxyService"
 	"context"
 )
 

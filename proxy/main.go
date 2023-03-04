@@ -1,8 +1,8 @@
 package main
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/consts"
-	prxyservice "bitcaskDB/internal/bitcask_master_slaves/proxy/kitex_gen/prxyService/proxyservice"
+	"bitcask_master_slave/pkg/consts"
+	prxyservice "bitcask_master_slave/proxy/kitex_gen/prxyService/proxyservice"
 	"log"
 	"net"
 

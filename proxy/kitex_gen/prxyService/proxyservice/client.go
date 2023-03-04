@@ -3,7 +3,7 @@
 package proxyservice
 
 import (
-	prxyservice "bitcaskDB/internal/bitcask_master_slaves/proxy/kitex_gen/prxyService"
+	prxyservice "bitcask_master_slave/proxy/kitex_gen/prxyService"
 	"context"
 	client "github.com/cloudwego/kitex/client"
 	callopt "github.com/cloudwego/kitex/client/callopt"

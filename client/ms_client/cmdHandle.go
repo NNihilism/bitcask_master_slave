@@ -1,10 +1,11 @@
 package msClient
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node"
-	"bitcaskDB/internal/util"
+	"bitcask_master_slave/node/kitex_gen/node"
 	"context"
 	"errors"
+
+	"github.com/NNihilism/bitcaskdb/util"
 )
 
 const (

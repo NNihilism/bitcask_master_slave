@@ -1,10 +1,11 @@
 package cmd
 
 import (
-	prxyservice "bitcaskDB/internal/bitcask_master_slaves/proxy/kitex_gen/prxyService"
-	"bitcaskDB/internal/util"
+	prxyservice "bitcask_master_slave/proxy/kitex_gen/prxyService"
 	"context"
 	"fmt"
+
+	"github.com/NNihilism/bitcaskdb/util"
 )
 
 type cmdHandler func(client *Client, cmd []byte, args [][]byte) (interface{}, error)

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/client/nodeClient"
+	"bitcask_master_slave/client/nodeClient"
 	"flag"
 )
 

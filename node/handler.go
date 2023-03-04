@@ -1,8 +1,8 @@
 package main
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/node/config"
-	node "bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node"
+	"bitcask_master_slave/node/config"
+	"bitcask_master_slave/node/kitex_gen/node"
 	"context"
 )
 

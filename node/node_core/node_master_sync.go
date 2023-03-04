@@ -1,14 +1,15 @@
 package nodeCore
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/node/config"
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node"
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node/nodeservice"
-	"bitcaskDB/internal/log"
-	"bitcaskDB/internal/util"
+	"bitcask_master_slave/log"
+	"bitcask_master_slave/node/config"
+	"bitcask_master_slave/node/kitex_gen/node"
+	"bitcask_master_slave/node/kitex_gen/node/nodeservice"
 	"context"
 	"fmt"
 	"sync"
+
+	"github.com/NNihilism/bitcaskdb/util"
 )
 
 // 异步更新

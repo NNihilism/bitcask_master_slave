@@ -1,8 +1,8 @@
 package msClient
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node/nodeservice"
-	"bitcaskDB/internal/log"
+	"bitcask_master_slave/log"
+	"bitcask_master_slave/node/kitex_gen/node/nodeservice"
 )
 
 // var loadBalancingMu = sync.Mutex{}

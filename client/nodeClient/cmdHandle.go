@@ -1,10 +1,11 @@
 package nodeClient
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node"
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/errno"
-	"bitcaskDB/internal/util"
+	"bitcask_master_slave/node/kitex_gen/node"
+	"bitcask_master_slave/pkg/errno"
 	"context"
+
+	"github.com/NNihilism/bitcaskdb/util"
 )
 
 type cmdHandler func(client *Client, cmd []byte, args [][]byte) (interface{}, error)

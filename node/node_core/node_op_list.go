@@ -1,10 +1,11 @@
 package nodeCore
 
 import (
-	"bitcaskDB/internal/bitcask"
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/errno"
+	"bitcask_master_slave/pkg/errno"
 	"bytes"
 	"strconv"
+
+	"github.com/NNihilism/bitcaskdb"
 )
 
 // +-------+--------+----------+------------+-----------+-------+---------+
@@ -25,7 +26,7 @@ func lPushX(bitcaskNode *BitcaskNode, args [][]byte) (interface{}, error) {
 	if len(args) < 2 {
 		return nil, errno.NewErr(errno.ErrCodeWrongArgsNumber, &errno.ErrInfo{Cmd: "lpush"})
 	}
-	if err := bitcaskNode.db.LPushX(args[0], args[1:]...); err != nil && err != bitcask.ErrKeyNotFound {
+	if err := bitcaskNode.db.LPushX(args[0], args[1:]...); err != nil && err != bitcaskdb.ErrKeyNotFound {
 		return nil, err
 	}
 	return bitcaskNode.db.LLen(args[0]), nil
@@ -45,7 +46,7 @@ func rPushX(bitcaskNode *BitcaskNode, args [][]byte) (interface{}, error) {
 	if len(args) < 2 {
 		return nil, errno.NewErr(errno.ErrCodeWrongArgsNumber, &errno.ErrInfo{Cmd: "lpush"})
 	}
-	if err := bitcaskNode.db.LPushX(args[0], args[1:]...); err != nil && err != bitcask.ErrKeyNotFound {
+	if err := bitcaskNode.db.LPushX(args[0], args[1:]...); err != nil && err != bitcaskdb.ErrKeyNotFound {
 		return nil, err
 	}
 	return bitcaskNode.db.LLen(args[0]), nil

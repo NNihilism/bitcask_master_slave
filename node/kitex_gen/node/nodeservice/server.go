@@ -2,7 +2,7 @@
 package nodeservice
 
 import (
-	node "bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node"
+	node "bitcask_master_slave/node/kitex_gen/node"
 	server "github.com/cloudwego/kitex/server"
 )
 

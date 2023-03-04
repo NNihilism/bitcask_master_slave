@@ -1,8 +1,8 @@
 package errno
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/node/config"
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node"
+	"bitcask_master_slave/node/config"
+	"bitcask_master_slave/node/kitex_gen/node"
 	"bytes"
 	"errors"
 	"fmt"

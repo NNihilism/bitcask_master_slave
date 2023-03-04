@@ -1,10 +1,10 @@
 package proxy
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node"
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node/nodeservice"
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/consts"
-	"bitcaskDB/internal/log"
+	"bitcask_master_slave/log"
+	"bitcask_master_slave/node/kitex_gen/node"
+	"bitcask_master_slave/node/kitex_gen/node/nodeservice"
+	"bitcask_master_slave/pkg/consts"
 	"context"
 
 	"github.com/cloudwego/kitex/client"

@@ -1,8 +1,9 @@
 package nodeCore
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/errno"
-	"bitcaskDB/internal/util"
+	"bitcask_master_slave/pkg/errno"
+
+	"github.com/NNihilism/bitcaskdb/util"
 )
 
 // +-------+--------+----------+------------+-----------+-------+---------+

@@ -2,18 +2,19 @@
 package nodeCore
 
 import (
-	"bitcaskDB/internal/bitcask"
-	"bitcaskDB/internal/bitcask_master_slaves/node/config"
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node"
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node/nodeservice"
-	"bitcaskDB/internal/bitcask_master_slaves/node/util/lru"
-	"bitcaskDB/internal/log"
-	"bitcaskDB/internal/options"
+	"bitcask_master_slave/log"
+	"bitcask_master_slave/node/config"
+	"bitcask_master_slave/node/kitex_gen/node"
+	"bitcask_master_slave/node/kitex_gen/node/nodeservice"
+	"bitcask_master_slave/node/util/lru"
 	"context"
 	"fmt"
 	"reflect"
 	"sync"
 	"time"
+
+	"github.com/NNihilism/bitcaskdb"
+	"github.com/NNihilism/bitcaskdb/options"
 )
 
 type nodeSynctatusCode int8
@@ -44,7 +45,7 @@ type slaveInfo struct {
 }
 
 type BitcaskNode struct {
-	db *bitcask.BitcaskDB
+	db *bitcaskdb.BitcaskDB
 	cf *config.NodeConfig
 
 	// TODO 由于BitcaskDB缺少快照功能 因此得在bitcask的上层再添加一个锁来保证”快照的实现“
@@ -77,7 +78,7 @@ func NewBitcaskNode(nodeConfig *config.NodeConfig, opts options.Options) (*Bitca
 	opts.RemakeDir = nodeConfig.RemakeDir
 
 	// 创建数据库
-	db, err := bitcask.Open(opts)
+	db, err := bitcaskdb.Open(opts)
 	if err != nil {
 		fmt.Printf("open bitcaskdb err: %v", err)
 		return nil, err
@@ -129,7 +130,7 @@ func (node *BitcaskNode) resetReplication(resetDB bool) {
 	if resetDB {
 		opts := options.DefaultOptions(node.cf.Path)
 		opts.RemakeDir = true
-		db, err := bitcask.Open(opts)
+		db, err := bitcaskdb.Open(opts)
 		log.Infof("MASTER <-> REPLICA sync: Flushing old data")
 		if err != nil {
 			fmt.Printf("open bitcaskdb err: %v", err)

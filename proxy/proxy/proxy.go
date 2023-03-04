@@ -1,8 +1,8 @@
 package proxy
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node/nodeservice"
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/consts"
+	"bitcask_master_slave/node/kitex_gen/node/nodeservice"
+	"bitcask_master_slave/pkg/consts"
 	"sync"
 	"time"
 )

@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/errno"
-	prxyservice "bitcaskDB/internal/bitcask_master_slaves/proxy/kitex_gen/prxyService"
+	"bitcask_master_slave/pkg/errno"
+	prxyservice "bitcask_master_slave/proxy/kitex_gen/prxyService"
 	"bytes"
 	"errors"
 	"reflect"

@@ -1,9 +1,9 @@
 package proxy
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node"
-	prxyservice "bitcaskDB/internal/bitcask_master_slaves/proxy/kitex_gen/prxyService"
-	"bitcaskDB/internal/bitcask_master_slaves/proxy/pack"
+	"bitcask_master_slave/node/kitex_gen/node"
+	prxyservice "bitcask_master_slave/proxy/kitex_gen/prxyService"
+	"bitcask_master_slave/proxy/pack"
 	"context"
 )
 

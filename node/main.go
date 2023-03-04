@@ -1,8 +1,8 @@
 package main
 
 import (
-	user "bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node/nodeservice"
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/consts"
+	node "bitcask_master_slave/node/kitex_gen/node/nodeservice"
+	"bitcask_master_slave/pkg/consts"
 	"log"
 	"net"
 
@@ -15,7 +15,7 @@ func main() {
 		panic(err)
 	}
 
-	svr := user.NewServer(
+	svr := node.NewServer(
 		new(NodeServiceImpl),
 		server.WithServiceAddr(addr),
 	)

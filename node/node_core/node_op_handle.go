@@ -1,13 +1,14 @@
 package nodeCore
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/node/config"
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node"
-	"bitcaskDB/internal/bitcask_master_slaves/node/util/pack"
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/errno"
-	"bitcaskDB/internal/log"
-	"bitcaskDB/internal/util"
+	"bitcask_master_slave/log"
+	"bitcask_master_slave/node/config"
+	"bitcask_master_slave/node/kitex_gen/node"
+	"bitcask_master_slave/node/util/pack"
+	"bitcask_master_slave/pkg/errno"
 	"fmt"
+
+	"github.com/NNihilism/bitcaskdb/util"
 )
 
 var resultOK = "OK"

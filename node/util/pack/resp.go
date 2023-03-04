@@ -1,8 +1,8 @@
 package pack
 
 import (
-	"bitcaskDB/internal/bitcask_master_slaves/node/kitex_gen/node"
-	"bitcaskDB/internal/bitcask_master_slaves/pkg/errno"
+	"bitcask_master_slave/node/kitex_gen/node"
+	"bitcask_master_slave/pkg/errno"
 	"fmt"
 	"reflect"
 	"time"
