@@ -20,7 +20,7 @@ func (cli *Client) getRpc(cmd string) nodeservice.Client {
 	cli.mu.Lock()
 	defer cli.mu.Unlock()
 
-	if !isReadOperation(cmd) {
+	if !isReadOperation(cmd) || cli.getSlaveNum() == 0 {
 		return cli.masterRpc
 	}
 	slaveId := cli.selectNode()
