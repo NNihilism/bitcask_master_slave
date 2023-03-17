@@ -81,6 +81,7 @@ func (bitcaskNode *BitcaskNode) SemiSynchronousSync(req *node.LogEntryRequest) {
 
 // 同步更新
 func (bitcaskNode *BitcaskNode) SynchronousSync(req *node.LogEntryRequest) {
+	// TODO 如果部分节点更新失败，则需要发送回滚通知
 	wg := new(sync.WaitGroup)
 	bitcaskNode.slavesInfo.Range(func(id, iInfo interface{}) bool {
 		info, ok := iInfo.(*slaveInfo)
@@ -443,6 +444,8 @@ func (bitcaskNode *BitcaskNode) flushAndUpdate(slaveId string) {
 	bitcaskNode.flushOpReqBuffer(info)
 	bitcaskNode.changeSlaveSyncStatus(slaveId, nodeInIdle)
 }
+
+// 刷新缓冲区数据
 func (bitcaskNode *BitcaskNode) flushOpReqBuffer(info *slaveInfo) {
 	rpc := info.rpc
 	for i := 0; i < len(info.buffer.buf); i++ {

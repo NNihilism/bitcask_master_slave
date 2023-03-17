@@ -154,6 +154,7 @@ func (bitcaskNode *BitcaskNode) HandleOpLogEntryRequest(req *node.LogEntryReques
 
 	// 从节点收到了Master发来的写操作
 	if bitcaskNode.cf.Role == config.Slave && !isReadOperation(command) {
+		// TODO 序列号不合法时，则放到缓冲区中
 		// 全量复制时，slave对序列号没要求
 		// 非全量复制时，slave需要检查序列号是否合法
 		if bitcaskNode.syncStatus != nodeInFullRepl && req.EntryId != int64(bitcaskNode.cf.CurReplicationOffset)+1 {
@@ -226,6 +227,7 @@ func (bitcaskNode *BitcaskNode) executeOpReq(req *node.LogEntryRequest) (*node.L
 	}
 
 	// 写操作 同步给从节点
+	// TODO 可以使用协程池来操作，这里只把req传入propagate模块
 	bitcaskNode.opPropagate(req)
 
 	return rpcResp, nil
