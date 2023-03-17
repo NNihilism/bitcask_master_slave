@@ -107,5 +107,13 @@ func (cli *Client) updateNodeInfo(ctx context.Context, ticker *time.Ticker) {
 			return
 		}
 	}
+}
 
+func (cli *Client) getSlaveNum() int {
+	var cnt int
+	cli.nodesInfo.Range(func(key any, value any) bool {
+		cnt++
+		return true
+	})
+	return cnt
 }
