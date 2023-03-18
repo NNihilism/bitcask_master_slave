@@ -95,3 +95,36 @@ redis主从使用 ：https://blog.csdn.net/weixin_40980639/article/details/12556
 
 
 
+#### benchmark
+```
+一主零从
+goos: linux
+goarch: amd64
+pkg: bitcask_master_slave/benchmark
+cpu: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx  
+BenchmarkMS_Get-8   	    1906	    584207 ns/op	     528 B/op	      14 allocs/op
+PASS
+ok  	bitcask_master_slave/benchmark	1.325s
+```
+
+```
+一主一从
+goos: linux
+goarch: amd64
+pkg: bitcask_master_slave/benchmark
+cpu: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx  
+BenchmarkMS_Get-8   	    1815	    581828 ns/op	     527 B/op	      14 allocs/op
+PASS
+ok  	bitcask_master_slave/benchmark	11.273s
+```
+
+```
+一主两从
+goos: linux
+goarch: amd64
+pkg: bitcask_master_slave/benchmark
+cpu: AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx  
+BenchmarkMS_Get-8   	    1770	    619130 ns/op	     526 B/op	      14 allocs/op
+PASS
+ok  	bitcask_master_slave/benchmark	11.308s
+```
