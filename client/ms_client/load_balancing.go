@@ -40,9 +40,6 @@ func (cli *Client) getRpc(cmd string) nodeservice.Client {
 
 func (cli *Client) selectNode() string {
 	// 选择一个合适的节点进行请求转发
-	cli.mu.RLock()
-	defer cli.mu.RUnlock()
-
 	if cli.lastNodeUpdate > lastTime {
 		cli.resetLoadBalancing()
 	}
@@ -65,9 +62,11 @@ func (cli *Client) resetLoadBalancing() {
 			weight: info.weight,
 			id:     info.id,
 		})
+		currentWeight = append(effectiveWeight, weightInfo{
+			id: info.id,
+		})
 		return true
 	})
-	currentWeight = make([]weightInfo, len(effectiveWeight))
 	lastTime = cli.lastNodeUpdate
 }
 
@@ -79,6 +78,7 @@ func (cli *Client) updateLoadBalancing() string {
 			res_idx = i
 		}
 	}
+
 	currentWeight[res_idx].weight -= totalWeight
 	return currentWeight[res_idx].id
 }
